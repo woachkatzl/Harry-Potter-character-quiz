@@ -1,0 +1,13 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+@use 'mixins' as *;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
