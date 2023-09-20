@@ -1,5 +1,4 @@
 import './styles.scss';
-//import cartoon from '../../../assets/img/mickey.png';
 
 class imageInit {
 
@@ -7,7 +6,7 @@ class imageInit {
         this.url = url;
     }
 
-    render() {
+    render = () => {
         const image = document.createElement("img");
 
         image.src = this.url;
