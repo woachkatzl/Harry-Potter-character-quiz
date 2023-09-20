@@ -1,0 +1,15 @@
+@use '../../../assets/styles/colors.scss' as c;
+@use '../../../assets/styles/fonts' as f;
+@use '../../../assets/styles/mixins' as *;
+
+.start-button {
+    padding: 30px 100px;
+    @include btn-text;
+    border: none;
+    border-radius: 88px;
+    background-color: c.$btn-color;
+}
+
+.start-button:hover {
+    cursor: pointer;
+}

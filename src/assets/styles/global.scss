@@ -44,7 +44,8 @@ a:hover {
     background-color: c.$bg-color-main;
 }
 
-.wrapper {
+.wrapper,
+.populate {
     @include vertical-flex;
 }
 
@@ -112,7 +113,7 @@ a:hover {
 
 //КНОПКА
 
-.start-button {
+/* .start-button {
     padding: 30px 100px;
     @include btn-text;
     border: none;
@@ -122,10 +123,10 @@ a:hover {
 
 .start-button:hover {
     cursor: pointer;
-}
+} */
 
 //КАРТИНКА
 
-.cartoon-init {
+/* .cartoon-init {
     width: 265px;
-}
+} */
