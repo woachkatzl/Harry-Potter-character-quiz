@@ -1,24 +1,27 @@
-import './styles.scss';
+import "./styles.scss";
 
 class Button {
-    constructor(onClick, text) {
-        this.onClick = onClick;
-        this.text = text;
-    }
+  constructor(onClick, text) {
+    this.onClick = onClick;
+    this.text = text;
+  }
 
-    onClickHandler = () => {
-        this.onClick();
-    }
+  onClickHandler = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
 
-    render() {
-        const button = document.createElement("button");
+    this.onClick();
+  };
 
-        addEventListener("click", this.onClickHandler);
-        button.textContent = this.text;
-        button.className = "start-button";
+  render() {
+    const button = document.createElement("button");
 
-        return button;
-    }
+    addEventListener("click", this.onClickHandler);
+    button.textContent = this.text;
+    button.className = "start-button";
+
+    return button;
+  }
 }
 
 export { Button };

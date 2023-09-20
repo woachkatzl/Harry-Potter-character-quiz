@@ -2,6 +2,8 @@
 @use '../../../assets/styles/fonts' as f;
 @use '../../../assets/styles/mixins' as *;
 
-.cartoon-init {
-    width: 265px;
+.result__title {
+    font-family: f.$title-text;
+    font-size: 2rem;
+    text-align: center;
 }

@@ -1,19 +1,19 @@
-import './styles.scss';
+import "./styles.scss";
 
-class imageInit {
+class ImageInit {
 
-    constructor(url) {
-        this.url = url;
-    }
+  constructor(url) {
+    this.url = url;
+  }
 
-    render = () => {
-        const image = document.createElement("img");
+  render() {
+    const image = document.createElement("img");
 
-        image.src = this.url;
-        image.className = "cartoon-init";
+    image.src = this.url;
+    image.className = "cartoon-init";
 
-        return image;
-    }
+    return image;
+  }
 }
 
-export { imageInit };
+export { ImageInit };
