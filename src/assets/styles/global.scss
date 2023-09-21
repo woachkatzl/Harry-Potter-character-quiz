@@ -74,8 +74,6 @@ a:hover {
     gap: 30px;
 }
 
-//STARTING PAGE (разобрать на компоненты)
-
 //РАМКА С ТЕКСТОМ
 
 .prompt {
@@ -110,10 +108,23 @@ a:hover {
     right: -30px;
 }
 
-//КНОПКА
+//КОНТЕЙНЕР, ЗАПОЛНЯЕМЫЙ JS
 
-.start-button {
-    padding: 30px 100px;
+.populate {
+    @include vertical-flex;
+    width: 100%;
+    margin: 50px 0;
+}
+
+
+//СТИЛИ ДЛЯ КОМПОНЕНТОВ
+
+//STARTING PAGE (разобрать на компоненты)
+
+//КНОПКА (добавила в компонент, Юля)
+
+/* .start-button {
+    padding: 20px 100px;
     @include btn-text;
     border: none;
     border-radius: 88px;
@@ -122,10 +133,39 @@ a:hover {
 
 .start-button:hover {
     cursor: pointer;
+} */
+
+//НАЧАЛЬНАЯ КАРТИНКА (добавила в компонент, Юля)
+
+/* .cartoon-init {
+    width: 265px;
+} */
+
+//БЛОК С РЕЗУЛЬТАТОМ (разобрать на компоненты)
+
+// ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (добавила в компонент, Юля)
+
+/* .character-img {
+    border-radius: 49px;
+} */
+
+.result {
+    width: 70%;
+    margin: 30px 0;
+    padding-bottom: 50px;
+    border-radius: 88px;
+    background-color: c.$bg-text;
 }
 
-//КАРТИНКА
+.result__title {
+    text-align: center;
+    font-family: f.$highlight-text;
+    font-size: 3rem;
+}
 
-.cartoon-init {
-    width: 265px;
+.result__info {
+    display: flex;
+    justify-content: space-around;
+    font-family: f.$plain-text;
+    font-size: 1.25rem;
 }
