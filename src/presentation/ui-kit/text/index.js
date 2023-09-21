@@ -11,7 +11,8 @@ class Text {
     const span = document.createElement("span");
 
     span.textContent = this.text;
-    span.className = "";
+    //добавить класс для текста
+    //span.className = "";
 
     return span;
   };
