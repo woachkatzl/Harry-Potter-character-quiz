@@ -116,11 +116,14 @@ a:hover {
     margin: 50px 0;
 }
 
+
+//СТИЛИ ДЛЯ КОМПОНЕНТОВ
+
 //STARTING PAGE (разобрать на компоненты)
 
-//КНОПКА
+//КНОПКА (добавила в компонент, Юля)
 
-.start-button {
+/* .start-button {
     padding: 20px 100px;
     @include btn-text;
     border: none;
@@ -130,15 +133,21 @@ a:hover {
 
 .start-button:hover {
     cursor: pointer;
-}
+} */
 
-//КАРТИНКА
+//НАЧАЛЬНАЯ КАРТИНКА (добавила в компонент, Юля)
 
-.cartoon-init {
+/* .cartoon-init {
     width: 265px;
-}
+} */
 
 //БЛОК С РЕЗУЛЬТАТОМ (разобрать на компоненты)
+
+// ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (добавила в компонент, Юля)
+
+/* .character-img {
+    border-radius: 49px;
+} */
 
 .result {
     width: 70%;
