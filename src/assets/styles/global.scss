@@ -74,8 +74,6 @@ a:hover {
     gap: 30px;
 }
 
-//STARTING PAGE (разобрать на компоненты)
-
 //РАМКА С ТЕКСТОМ
 
 .prompt {
@@ -110,10 +108,20 @@ a:hover {
     right: -30px;
 }
 
+//КОНТЕЙНЕР, ЗАПОЛНЯЕМЫЙ JS
+
+.populate {
+    @include vertical-flex;
+    width: 100%;
+    margin: 50px 0;
+}
+
+//STARTING PAGE (разобрать на компоненты)
+
 //КНОПКА
 
 .start-button {
-    padding: 30px 100px;
+    padding: 20px 100px;
     @include btn-text;
     border: none;
     border-radius: 88px;
@@ -128,4 +136,27 @@ a:hover {
 
 .cartoon-init {
     width: 265px;
+}
+
+//БЛОК С РЕЗУЛЬТАТОМ (разобрать на компоненты)
+
+.result {
+    width: 70%;
+    margin: 30px 0;
+    padding-bottom: 50px;
+    border-radius: 88px;
+    background-color: c.$bg-text;
+}
+
+.result__title {
+    text-align: center;
+    font-family: f.$highlight-text;
+    font-size: 3rem;
+}
+
+.result__info {
+    display: flex;
+    justify-content: space-around;
+    font-family: f.$plain-text;
+    font-size: 1.25rem;
 }

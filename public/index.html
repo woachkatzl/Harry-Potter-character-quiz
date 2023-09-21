@@ -18,8 +18,6 @@
     <main class="main">
       <div class="wrapper">
 
-        <!-- Заполняем JS, начальная страница-->
-
         <div class="prompt">
           <img
             class="prompt__img prompt__img--left"
@@ -33,14 +31,52 @@
             alt="cartoon star image"
           />
         </div>
-        <button class="start-button">START</button>
-        <img
-          class="cartoon-init"
-          src="../src/assets/img/mickey.png"
-          alt="mickey"
-        />
 
-        <!-- Окончание блока начальной страницы, заполняемой JS-->
+        <!-- Контейнер, который будет заполняться с помощью JS-->
+
+        <div class="populate">
+
+          <!-- Заполняем JS, начальная страница-->
+
+          <button class="start-button">START</button>
+          <img
+            class="cartoon-init"
+            src="../src/assets/img/mickey.png"
+            alt="mickey"
+          />
+
+          <!-- Окончание блока начальной страницы, заполняемой JS-->
+
+
+          <!-- Результат, заполняет с помощью JS -->
+
+          <img src="https://ik.imagekit.io/hpapi/harry.jpg" alt="Character image">
+
+          <div class="result">
+
+            <h1 class="result__title">Harry Potter</h1>
+
+            <div class="result__info">
+
+              <ul>
+                <li>House: Gryffindor</li>
+                <li>Species: Human</li>
+                <li>Ancestry: Half-blood</li>
+              </ul>
+
+              <ul>
+                <li>Year of birth: 1980</li>
+                <li>Actor: Daniel Radcliff</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+          <button class="start-button">Try again</button>
+
+          <!-- Окончание блока с результатом -->
+        </div>
 
       </div>
     </main>
