@@ -3,27 +3,27 @@
 import "./styles.scss";
 
 class Button {
-  constructor(onClick, text) {
-    this.onClick = onClick;
-    this.text = text;
-  }
+    constructor(onClick, text) {
+        this.onClick = onClick;
+        this.text = text;
+    }
 
-  onClickHandler = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
+    onClickHandler = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
 
-    this.onClick();
-  };
+        this.onClick();
+    };
 
-  render() {
-    const button = document.createElement("button");
+    render() {
+        const button = document.createElement("button");
 
-    addEventListener("click", this.onClickHandler);
-    button.textContent = this.text;
-    button.className = "start-button";
+        button.addEventListener("click", this.onClickHandler);
+        button.textContent = this.text;
+        button.className = "start-button";
 
-    return button;
-  }
+        return button;
+    }
 }
 
 export { Button };

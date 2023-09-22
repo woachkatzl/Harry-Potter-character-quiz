@@ -7,10 +7,20 @@ import cartoon from "./assets/img/mickey.png";
 //Компоненты
 import { Button } from "./presentation/ui-kit/button";
 import { Image } from "./presentation/ui-kit/image";
+import { Result } from "./presentation/components/result";
 
-//Конейнер, куда заполняем контент
+//Основной контейнер, куда заполняем контент
 const container = document.querySelector("#container");
-    
+
+//Получаем результат - контейнер, где будет появляться информация из API
+const result = new Result();
+
+//Кладём его в контейнер
+container.appendChild(result.render());
+
+//Получаем его, чтобы наполнить начальным контентом
+const resultContainer = document.querySelector("#result-container");
+
 //Заполняем начальную страницу
-container.appendChild(new Image(cartoon, "cartoon-init").render());
-container.appendChild(new Button(() => null, "START").render());
+resultContainer.appendChild(new Image(cartoon, "cartoon-init").render());
+resultContainer.appendChild(new Button(result.updateInfo, "START").render());

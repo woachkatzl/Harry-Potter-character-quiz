@@ -1,0 +1,9 @@
+@use "../../../assets/styles/colors" as c;
+@use "../../../assets/styles/fonts" as f;
+@use "../../../assets/styles/mixins" as *;
+
+.populate {
+    @include vertical-flex;
+    width: 100%;
+    margin: 50px 0;
+}
