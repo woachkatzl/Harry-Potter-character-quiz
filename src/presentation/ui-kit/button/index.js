@@ -18,7 +18,7 @@ class Button {
   render() {
     const button = document.createElement("button");
 
-    addEventListener("click", this.onClickHandler);
+    button.addEventListener("click", this.onClickHandler);
     button.textContent = this.text;
     button.className = "start-button";
 
