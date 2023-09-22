@@ -12,7 +12,7 @@
     font-family: f.$highlight-text;
     font-size: 2.5rem;
     text-align: center;
-    color: c.$bg-text;
+    color: c.$text-highlight; // иначе тут был желтый цвет, сливающийся c цветом кнопки
 }
 
 //Миксин для размещения элементов вертикально по центру
