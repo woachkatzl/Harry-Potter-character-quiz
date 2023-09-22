@@ -6,35 +6,42 @@ import { Button } from "../../ui-kit/button";
 import { InfoBox } from "../info-box";
 
 class Result {
-    #character;
+  #character;
 
-    constructor() {
-        this.wrapper = document.createElement("div");
-        this.wrapper.className = "populate";
-        this.wrapper.setAttribute("id", "result-container")
-    }
+  constructor() {
+    //Создаём главный див-обёртку для всей информации, добавляемой с помощью скрипта. Мы его приклеим в основном index.js в наш див "wrapper", который лежит в шаблоне public/index.html.
+    this.wrapper = document.createElement("div");
+    this.wrapper.className = "populate";
+    this.wrapper.setAttribute("id", "result-container");
+  }
 
-    updateInfo = async () => {
-        this.#character = await getCharacter();
+  //Метод, который будет получать новый объект персонажа из API и перерисовывать содержание главного дива-обёртки
+  updateInfo = async () => {
+    this.#character = await getCharacter();
 
-        this.render();
-    }
+    this.render();
+  };
 
-    render() {
-        this.wrapper.innerHTML = "";
+  render() {
+    //Очищаем наполенение при каждом новом запуске рендера
+    this.wrapper.innerHTML = "";
 
-        if (!this.#character)
-            return this.wrapper;
+    //Если пока нет данных персонажа, возвращяем пустой див-обёртку. Например, при первой загрузке страницы мы приклеим этот див пустым, и положим в него изначальные изображение с кнопкой в основном index.js
+    if (!this.#character)
+      return this.wrapper;
 
-        const characterImage = new Image(this.#character.image, "character-img");
-        const characterInfoBox = new InfoBox(this.#character.name);
+    //Создаём изображение персонажа из полученного ранее объекта
+    const characterImage = new Image(this.#character.image, "character-img");
+    //Создаём рамку с информацией о персонаже. Если добавим ещё свойств, нужно будет добавить их здесь в конструктор
+    const characterInfoBox = new InfoBox(this.#character.name);
 
-        this.wrapper.appendChild(characterImage.render());
-        this.wrapper.appendChild(characterInfoBox.render());
-        this.wrapper.appendChild(new Button(this.updateInfo, "TRY AGAIN").render());
+    //Добавляем изображение, рамку с инфой и новую кнопу в главный див-обёртку
+    this.wrapper.appendChild(characterImage.render());
+    this.wrapper.appendChild(characterInfoBox.render());
+    this.wrapper.appendChild(new Button(this.updateInfo, "TRY AGAIN").render());
 
-        return this.wrapper;
-    }
+    return this.wrapper;
+  }
 }
 
 export { Result };
