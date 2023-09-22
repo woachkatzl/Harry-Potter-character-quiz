@@ -2,7 +2,7 @@
 import "./assets/styles/global.scss";
 
 //Изображения
-import cartoon from "./assets/img/mickey.png";
+import initialImage from "./assets/img/mickey.png";
 
 //Компоненты
 import { Button } from "./presentation/ui-kit/button";
@@ -22,5 +22,5 @@ container.appendChild(result.render());
 const resultContainer = document.querySelector("#result-container");
 
 //Заполняем начальную страницу
-resultContainer.appendChild(new Image(cartoon, "cartoon-init").render());
+resultContainer.appendChild(new Image(initialImage, "cartoon-init").render());
 resultContainer.appendChild(new Button(result.updateInfo, "START").render());

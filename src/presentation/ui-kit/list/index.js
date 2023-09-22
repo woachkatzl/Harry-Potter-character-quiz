@@ -1,5 +1,6 @@
 class List {
 
+  //В аргументы передаём массивы
   constructor(categories, results) {
     this.categories = categories;
     this.results = results;
