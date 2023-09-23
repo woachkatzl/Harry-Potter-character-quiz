@@ -64,7 +64,7 @@ async function getCharacter() {
       species,
       ancestry,
       yearOfBirth,
-      actor
+      actor,
     );
   }
   catch (error) {

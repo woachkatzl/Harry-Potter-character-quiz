@@ -29,12 +29,12 @@ class InfoBox {
 
     //Создаём список с категориями персонажа
     //Создаём 2 массива для списков категорий
-    const categoriesList = [this.house, this.species, this.ancestry, this.yearOfBirth, this.actor];
-    const resultsList = ["test"];
+    const categories = ["house", "species", "ancestry", "yearOfBirth", "actor"];
+    const results = [this.house, this.species, this.ancestry, this.yearOfBirth, this.actor];
 
     const resultInfo = document.createElement("div");
     resultInfo.className = "result__info";
-    resultInfo.appendChild(new List(categoriesList, resultsList));
+    resultInfo.appendChild(new List(categories, results));
 
     //Добавляем созданные элементы в див-обёртку
     this.wrapper.appendChild(title);
