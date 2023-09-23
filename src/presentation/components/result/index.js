@@ -1,4 +1,4 @@
-//Здесь будет собираться весь визул для вывода результата: 1) изображение 2) инфо-бокс 3) кнопка "Try again"
+//Здесь будет собираться весь визуал для вывода результата: 1) изображение 2) инфо-бокс 3) кнопка "Try again"
 import "./styles.scss";
 import { getCharacter } from "../../../infrastructure/getCharacter";
 import { Image } from "../../ui-kit/image";
@@ -23,7 +23,7 @@ class Result {
   };
 
   render() {
-    //Очищаем наполенение при каждом новом запуске рендера
+    //Очищаем наполнение при каждом новом запуске рендера
     this.wrapper.innerHTML = "";
 
     //Если пока нет данных персонажа, возвращяем пустой див-обёртку. Например, при первой загрузке страницы мы приклеим этот див пустым, и положим в него изначальные изображение с кнопкой в основном index.js
@@ -35,7 +35,7 @@ class Result {
     //Создаём рамку с информацией о персонаже. Если добавим ещё свойств, нужно будет добавить их здесь в конструктор
     const characterInfoBox = new InfoBox(this.#character.name);
 
-    //Добавляем изображение, рамку с инфой и новую кнопу в главный див-обёртку
+    //Добавляем изображение, рамку с инфой и новую кнопку в главный див-обёртку
     this.wrapper.appendChild(characterImage.render());
     this.wrapper.appendChild(characterInfoBox.render());
     this.wrapper.appendChild(new Button(this.updateInfo, "TRY AGAIN").render());
