@@ -30,39 +30,31 @@ async function getCharacter() {
     if (image === "")
       image = defaultImage;
 
-    //Получаем категории персонажа
-    /*
-    let house = result[number].house;
-    let species = result[number].species;
-    let ancestry = result[number].ancestry;
-    let yearOfBirth = result[number].yearOfBirth;
-    let actor = result[number].actor;
-*/
     //Проверяем, что получили не пустые категории персонажа
     let house = result[number].house;
 
     if (house === "")
-    house = "Did not go to Hogwarts";
+      house = "Did not go to Hogwarts";
 
     let species = result[number].species;
 
     if (species === "")
-    species = "Some other unearthly creature";
+      species = "Some other unearthly creature";
 
     let ancestry = result[number].ancestry;
 
     if (ancestry === "")
-    ancestry = "Who cares about that now anyways?";
+      ancestry = "Who cares about that now anyways?";
 
     let yearOfBirth = result[number].yearOfBirth;
 
     if (yearOfBirth === null)
-    yearOfBirth = "A year long passed";
+      yearOfBirth = "A year long passed";
 
     let actor = result[number].actor;
 
     if (actor === "")
-    actor = "Did not make it to the movies";
+      actor = "Did not make it to the movies";
 
     //Эту строку уберём в конечной версии, сейчас она полезна
     console.log(result[number]);
