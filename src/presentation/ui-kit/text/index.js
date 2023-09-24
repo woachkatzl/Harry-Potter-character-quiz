@@ -1,6 +1,4 @@
 //Здесь будет класс, создающий текст в теге <span>, который можно вставлять в другие элементы.
-import "./styles.scss";
-
 class Text {
 
   constructor(text) {
