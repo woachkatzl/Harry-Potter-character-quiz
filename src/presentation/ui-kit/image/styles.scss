@@ -4,8 +4,15 @@
 
 //Изображение персонажа
 .character-img {
-    border-radius: 49px;
     max-width: 40%;
+    border-radius: 49px;
+}
+
+//Изображения для ошибки
+.error-img {
+    max-width: 40%;
+    margin-bottom: 30px;
+    border-radius: 49px;
 }
 
 //Изображение на начальной странице загрузки
