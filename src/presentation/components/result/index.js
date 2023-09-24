@@ -1,5 +1,8 @@
 //Здесь будет собираться весь визуал для вывода результата: 1) изображение 2) инфо-бокс 3) кнопка "Try again"
+//Стили
 import "./styles.scss";
+
+//Компоненты
 import { getCharacter } from "../../../infrastructure/getCharacter";
 import { Image } from "../../ui-kit/image";
 import { Button } from "../../ui-kit/button";
@@ -32,8 +35,16 @@ class Result {
 
     //Создаём изображение персонажа из полученного ранее объекта
     const characterImage = new Image(this.#character.image, "character-img");
+
     //Создаём рамку с информацией о персонаже. Если добавим ещё свойств, нужно будет добавить их здесь в конструктор
-    const characterInfoBox = new InfoBox(this.#character.name, this.#character.house, this.#character.species, this.#character.ancestry, this.#character.yearOfBirth, this.#character.actor);
+    const characterInfoBox = new InfoBox(
+      this.#character.name,
+      this.#character.house,
+      this.#character.species,
+      this.#character.ancestry,
+      this.#character.yearOfBirth,
+      this.#character.actor
+    );
 
     //Добавляем изображение, рамку с инфой и новую кнопку в главный див-обёртку
     this.wrapper.appendChild(characterImage.render());

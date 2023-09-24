@@ -9,7 +9,7 @@ async function getCharacter() {
     const response = await fetch("https://hp-api.onrender.com/api/characters");
     const result = await response.json();
 
-    //Получаем случайное число от 1 до максимального количества персонажей в API)
+    //Получаем случайное число от 1 до максимального количества персонажей в API
     const number = Math.ceil(Math.random() * (result.length - 1));
 
     //Проверяем, чтобы по полученному числу вернулся существующий объект с персонажем
@@ -62,7 +62,7 @@ async function getCharacter() {
     //Возвращаем объект персонажа с помощью класса, прописанного в domain/entity/Character.js и импортированного в начале. Если хотим добавить ему свойств, добавляем их в тот класс конструктор и сюда.
     return new Character(
       name,
-      image, 
+      image,
       house,
       species,
       ancestry,
