@@ -19,7 +19,7 @@ const result = new Result();
 //Кладём его в контейнер
 container.appendChild(result.render());
 
-//Получаем его, чтобы наполнить начальным контентом
+//Получаем его в DOM (контейнер-результат), чтобы наполнить начальным контентом
 const resultContainer = document.querySelector("#result-container");
 
 //Заполняем начальную страницу
