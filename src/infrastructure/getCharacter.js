@@ -1,6 +1,9 @@
 // Здесь будет функция получения объекта персонажа из API
-
+//Классы
 import { Character } from "../domain/entity/Character";
+import { ErrorObj } from "../domain/entity/Error";
+
+//Изображения
 import defaultImage from "../assets/img/default-image.jpg";
 
 async function getCharacter() {
@@ -73,6 +76,7 @@ async function getCharacter() {
   catch (error) {
     console.log("Ошибка!", error.message);
     //Здесь в идеале нужно будет дописать хорошо оформленный вывод ошибок на экран, или как ещё мы решим их обрабатывать
+    return new ErrorObj(error.message);
   }
 }
 
