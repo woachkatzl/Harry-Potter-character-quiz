@@ -12,4 +12,21 @@
 .cartoon-init {
     width: 646px;
     height: 228px;
+    transition: transform 1s ease-in-out;
+    /* Плавное изменение положения */
+
+    animation: breath 2s infinite alternate;
+    /* Анимация дыхания */
+}
+
+@keyframes breath {
+    0% {
+        transform: translateY(0);
+        /* Начальное положение */
+    }
+
+    100% {
+        transform: translateY(-10px);
+        /* Конечное положение (движение вверх) */
+    }
 }

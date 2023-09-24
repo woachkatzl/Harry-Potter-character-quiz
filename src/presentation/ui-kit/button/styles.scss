@@ -8,8 +8,55 @@
     border: none;
     border-radius: 88px;
     background-color: c.$btn-color;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    /* Добавляем анимацию движения */
+}
+
+.start-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: rgba(243, 214, 74, 0.753); // Цвет фона при наведении
+    transform-origin: top left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
 }
 
 .start-button:hover {
-    cursor: pointer;
+    transform: scale(1.05);
+    /* Добавляем масштабирование при наведении */
+}
+
+.start-button:hover::before {
+    transform: scaleX(1);
+}
+
+.start-button:hover:before {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 1;
+    animation: sparkle 2s infinite;
+    /* Анимация искр */
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
 }
