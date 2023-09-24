@@ -1,6 +1,10 @@
 //Здесь будет класс InfoBox, на основе которого будет отрисовываться div-рамка с инофрмацией о персонаже
+//Стили
 import "./styles.scss";
+
+//Компоненты
 import { List } from "../../ui-kit/list";
+import { Text } from "../../ui-kit/text";
 
 class InfoBox {
 
@@ -25,7 +29,7 @@ class InfoBox {
     //Создаём элемент с именем персонажа со стилями
     const title = document.createElement("h1");
     title.className = "result__title";
-    title.appendChild(new Text(this.name));
+    title.appendChild(new Text(this.name).render());
 
     //Создаём список с категориями персонажа
     //Создаём 2 массива для списков категорий
