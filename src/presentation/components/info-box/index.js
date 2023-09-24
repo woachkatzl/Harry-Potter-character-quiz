@@ -29,8 +29,8 @@ class InfoBox {
 
     //Создаём список с категориями персонажа
     //Создаём 2 массива для списков категорий
-    const categories1 = ["house", "species", "ancestry"];
-    const categories2 = ["yearOfBirth", "actor"];
+    const categories1 = ["HOUSE", "SPECIES", "ANCESTRY"];
+    const categories2 = ["YEAR OF BIRTH", "ACTOR"];
     const results1 = [this.house, this.species, this.ancestry];
     const results2 = [this.yearOfBirth, this.actor];
 
