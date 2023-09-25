@@ -1,0 +1,56 @@
+@use "../../../assets/styles/colors" as c;
+@use "../../../assets/styles/fonts" as f;
+@use "../../../assets/styles/mixins" as *;
+
+.result {
+    width: 70%;
+    margin: 30px 0;
+    padding: 0 80px 50px;
+    border-radius: 88px;
+    background-color: c.$bg-text;
+}
+
+.result__title {
+    margin-bottom: 0;
+    text-align: center;
+    font-family: f.$highlight-text;
+    letter-spacing: 0.0625rem;
+    font-size: 3rem;
+}
+
+.result__sub-title {
+    margin-top: 0;
+    text-align: center;
+    font-family: f.$highlight-text;
+    letter-spacing: 0.0625rem;
+    font-size: 2.5rem;
+}
+
+.result__info {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    font-family: f.$plain-text;
+    font-size: 1.25rem;
+}
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .result__info {
+        flex-direction: column;
+        /*   столбцовая ориентация для элементов внутри контейнера */
+        padding: 10px 0 10px 15%;
+        /* Выравнивание текста по центру */
+        font-size: 1rem;
+        /*  размер шрифта на мобильных устройствах */
+        gap: 0;
+    }
+
+    .result__title {
+        font-size: 2.5rem;
+    }
+
+    .result__sub-title {
+        font-size: 2rem;
+    }
+}

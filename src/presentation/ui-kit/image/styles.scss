@@ -1,0 +1,71 @@
+@use '../../../assets/styles/colors' as c;
+@use '../../../assets/styles/fonts' as f;
+@use '../../../assets/styles/mixins' as *;
+
+//Изображение персонажа
+.character-img {
+    max-width: 40%;
+    border-radius: 49px;
+}
+
+//Изображение сбоку результата
+.result-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 25%;
+}
+
+//Изображение для ошибки
+.error-img {
+    max-width: 40%;
+    margin-bottom: 30px;
+    border-radius: 49px;
+}
+
+//Изображение на начальной странице загрузки
+.cartoon-init {
+    //Наложение поверх кнопки
+    position: relative;
+    bottom: -25px;
+    z-index: 10;
+
+    transition: transform 1s ease-in-out;
+    /* Плавное изменение положения */
+
+    animation: breath 2s infinite alternate;
+    /* Анимация дыхания */
+}
+
+@keyframes breath {
+    0% {
+        transform: translateY(0);
+        /* Начальное положение */
+    }
+
+    100% {
+        transform: translateY(-10px);
+        /* Конечное положение (движение вверх) */
+    }
+}
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .character-img {
+        max-width: 80%;
+        /*  максимальная ширина на мобильных устройствах */
+    }
+
+    .cartoon-init {
+        max-width: 100%;
+        /*  100% ширины на мобильных устройствах */
+        width: auto;
+        /*  фиксированная ширина и высоту */
+        height: auto;
+        animation: breath 2s infinite alternate;
+    }
+
+    .result-img {
+        max-width: 35%;
+    }
+}

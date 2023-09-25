@@ -1,0 +1,193 @@
+@use 'colors' as c;
+@use 'fonts' as f;
+@use 'mixins' as *;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    @include clear-mp;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+//HEADER
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: c.$bg-color-main;
+}
+
+.header__logo {
+    width: 25%;
+    margin-top: 29px;
+    margin-bottom: 70px;
+}
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .header__logo {
+        width: 50%;
+        /* ширина логотипа на мобильных устройствах */
+
+        margin-bottom: 20px;
+        /*  отступ снизу на мобильных устройствах */
+    }
+}
+
+/* Медиазапрос для планшетных устройств (ширина экрана от 768px до 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header__logo {
+        width: 40%;
+        /*  ширина логотипа на планшетных устройствах */
+        margin-bottom: 40px;
+        /*  отступ снизу на планшетных устройствах */
+    }
+}
+
+//MAIN
+
+.main {
+    background-color: c.$bg-color-main;
+}
+
+.wrapper {
+    @include vertical-flex;
+}
+
+//FOOTER
+
+.footer {
+    @include vertical-flex;
+    gap: 30px;
+    padding: 30px 40px;
+    font-family: f.$plain-text;
+    background-color: c.$bg-color-footer;
+    text-align: center;
+    /* Выравнивание текста по центру */
+}
+
+.footer__logo {
+    width: 170px;
+}
+
+.footer__authors {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+
+.footer__author {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .footer {
+        /*  стили для контейнера на мобильных устройствах */
+        padding: 20px 40px;
+        /* Измените отступы по вашему усмотрению */
+    }
+
+    .footer__logo {
+        width: 30%;
+        /*  ширина логотипа на мобильных устройствах */
+    }
+
+    .footer__authors {
+        width: 50%;
+        /*  доступная ширина на мобильных устройствах */
+        flex-direction: column;
+        /* элементы внутри контейнера */
+        gap: 20px;
+        padding-left: 10%;
+    }
+}
+
+//РАМКА С ТЕКСТОМ
+
+.prompt {
+    position: relative;
+    width: 58%;
+    margin-bottom: 30px;
+    padding: 0 30px;
+    border-radius: 49px;
+    background-color: c.$bg-text;
+}
+
+.prompt__text {
+    font-family: f.$highlight-text;
+    font-size: 4rem;
+    color: c.$text-highlight;
+    text-align: center;
+}
+
+.prompt__img {
+    position: absolute;
+    width: 94px;
+    height: 94px;
+}
+
+.prompt__img--left {
+    top: -30px;
+    left: -50px;
+}
+
+.prompt__img--right {
+    bottom: -50px;
+    right: -30px;
+}
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .prompt {
+        width: 90%;
+        /*  ширина рамки на мобильных устройствах */
+        margin: 20px auto;
+        /* Центр по горизонтали и  отступы */
+        padding: 10px;
+        /*  внутренние отступы */
+        border-radius: 20px;
+        /*  радиус скругления углов */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .prompt__text {
+        font-size: 3rem;
+        /*  размер текста на мобильных устройствах */
+    }
+
+    .prompt__img {
+        width: 70px;
+        /*  размер изображения на мобильных устройствах */
+        height: 70px;
+        position: relative;
+    }
+
+    .prompt__img--left {
+        left: -30px;
+    }
+
+    .prompt__img--right {
+        align-self: flex-end;
+    }
+}
