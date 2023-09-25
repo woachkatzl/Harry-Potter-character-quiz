@@ -8,9 +8,19 @@ class Character {
   #ancestry;
   #yearOfBirth;
   #actor;
+  #alive;
 
   //В конструктор добавляем все свойства объекта, которые хотим выводит в результатах. Также добавляем их выше с # и ниже в геттеры
-  constructor(name, image, house, species, ancestry, yearOfBirth, actor) {
+  constructor(
+    name,
+    image,
+    house,
+    species,
+    ancestry,
+    yearOfBirth,
+    actor,
+    alive
+  ) {
     this.#name = name;
     this.#image = image;
     this.#house = house;
@@ -18,6 +28,7 @@ class Character {
     this.#ancestry = ancestry;
     this.#yearOfBirth = yearOfBirth;
     this.#actor = actor;
+    this.#alive = alive;
   }
 
   get name() {
@@ -46,6 +57,10 @@ class Character {
 
   get actor() {
     return this.#actor;
+  }
+
+  get alive() {
+    return this.#alive;
   }
 }
 

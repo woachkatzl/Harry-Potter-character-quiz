@@ -1,0 +1,7 @@
+@use '../../../assets/styles/colors' as c;
+@use '../../../assets/styles/fonts' as f;
+@use '../../../assets/styles/mixins' as *;
+
+.result__list-item {
+    margin: 15px 0;
+}

@@ -8,7 +8,15 @@ import { Text } from "../../ui-kit/text";
 
 class InfoBox {
 
-  constructor(name, house, species, ancestry, yearOfBirth, actor) {
+  constructor(
+    name,
+    house,
+    species,
+    ancestry,
+    yearOfBirth,
+    actor,
+    alive
+  ) {
     //Сразу в конструкторе создаём див-обёртку и присваем ему класс со стилями. 
     this.wrapper = document.createElement("div");
     this.wrapper.className = "result";
@@ -20,6 +28,7 @@ class InfoBox {
     this.ancestry = ancestry;
     this.yearOfBirth = yearOfBirth;
     this.actor = actor;
+    this.alive = alive;
   }
 
   render() {
@@ -30,6 +39,16 @@ class InfoBox {
     const title = document.createElement("h1");
     title.className = "result__title";
     title.appendChild(new Text(this.name).render());
+
+    //Создаём элемент с жизненным статусом персонажа
+    const subTitle = document.createElement("h2");
+    subTitle.className = "result__sub-title";
+    if (this.alive === true) {
+      subTitle.appendChild(new Text("Alive").render());
+    }
+    else {
+      subTitle.appendChild(new Text("Deceased").render());
+    }
 
     //Создаём список с категориями персонажа
     //Создаём 2 массива для списков категорий
@@ -45,6 +64,7 @@ class InfoBox {
 
     //Добавляем созданные элементы в див-обёртку
     this.wrapper.appendChild(title);
+    this.wrapper.appendChild(subTitle);
     this.wrapper.appendChild(resultInfo);
 
     return this.wrapper;

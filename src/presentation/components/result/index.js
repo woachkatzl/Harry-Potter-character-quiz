@@ -11,6 +11,9 @@ import { ErrorMsg } from "../error-msg";
 
 //Изображения
 import errorImage from "../../../assets/img/error-img.gif";
+import resultImage1 from "../../../assets/img/result-img1.png";
+import resultImage2 from "../../../assets/img/result-img2.png";
+import resultImage3 from "../../../assets/img/result-img3.png";
 
 class Result {
   #resultInfo;
@@ -49,12 +52,27 @@ class Result {
         this.#resultInfo.species,
         this.#resultInfo.ancestry,
         this.#resultInfo.yearOfBirth,
-        this.#resultInfo.actor
+        this.#resultInfo.actor,
+        this.#resultInfo.alive
       );
 
-      //Добавляем изображение, рамку с инфой и новую кнопку в главный див-обёртку
+      //Выбираем случайное из 3х изображений для результата
+      const number = Math.ceil(Math.random() * 3);
+      let resultImageElement;
+      if (number === 1) {
+        resultImageElement = new Image(resultImage1, "result-img");
+      }
+      else if (number === 2) {
+        resultImageElement = new Image(resultImage2, "result-img");
+      }
+      else {
+        resultImageElement = new Image(resultImage3, "result-img");
+      }
+
+      //Добавляем изображения, рамку с инфой и новую кнопку в главный див-обёртку
       this.wrapper.appendChild(characterImage.render());
       this.wrapper.appendChild(characterInfoBox.render());
+      this.wrapper.appendChild(resultImageElement.render());
       this.wrapper.appendChild(new Button(this.updateInfo, "TRY AGAIN").render());
     }
     //Если получаем ошибку
