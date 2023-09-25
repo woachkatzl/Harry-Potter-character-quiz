@@ -1,6 +1,6 @@
 # Harry Potter Character Quiz
 ## ITG JavaScript group project: NPM, Webpack, API, Sass, BEM
-###Overview
+### Overview
 This project is developed by a group of four students as an educational endeavour completed within one week. It uses a [free API](https://hp-api.onrender.com/), and leverages technologies such as npm, Webpack, and SCSS preprocessor. The primary language is JavaScript. Our team also designed the layout using Figma, resulting in a fun and interactive web page.
 ### Description
 The main page of our project sets the theme: "What character are you today?" 
