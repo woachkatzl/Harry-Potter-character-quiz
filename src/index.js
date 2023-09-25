@@ -27,9 +27,9 @@ const resultContainer = document.querySelector("#result-container");
 //Случайно выбираем одно их двух начальных изображений
 const number = Math.ceil(Math.random() * 2);
 if (number === 1) {
-    resultContainer.appendChild(new Image(initialImage1, "cartoon-init").render());
+  resultContainer.appendChild(new Image(initialImage1, "cartoon-init").render());
 }
 else {
-    resultContainer.appendChild(new Image(initialImage2, "cartoon-init").render());
+  resultContainer.appendChild(new Image(initialImage2, "cartoon-init").render());
 }
 resultContainer.appendChild(new Button(result.updateInfo, "START").render());

@@ -49,6 +49,9 @@ async function getCharacter() {
     if (image === "")
       image = defaultImage;
 
+    //Получаем живой персонаж или погибший
+    const alive = result[number].alive;
+
     //Проверяем, что получили не пустые категории персонажа
     let house = result[number].house;
 
@@ -87,6 +90,7 @@ async function getCharacter() {
       ancestry,
       yearOfBirth,
       actor,
+      alive,
     );
   }
   catch (error) {

@@ -52,7 +52,8 @@ class Result {
         this.#resultInfo.species,
         this.#resultInfo.ancestry,
         this.#resultInfo.yearOfBirth,
-        this.#resultInfo.actor
+        this.#resultInfo.actor,
+        this.#resultInfo.alive
       );
 
       //Выбираем случайное из 3х изображений для результата
