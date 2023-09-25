@@ -3,13 +3,29 @@
 import { Character } from "../domain/entity/Character";
 import { ErrorObj } from "../domain/entity/Error";
 
+//Функционал
+import { fetchWithTimeout } from "./timeoutFetch";
+
 //Изображения
 import defaultImage from "../assets/img/default-image.jpg";
 
 async function getCharacter() {
+
   try {
+    //Проверяем, интернет соединение пользователя
+    if (!navigator.onLine) {
+      throw new Error("No internet connection available.");
+    }
+
+    //Получаем ответ с сервера
+    const response = await fetchWithTimeout("https://hp-api.onrender.com/api/characters");
+
+    //Проверяем статус ответа с сервера
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status} ${response.statusText}`);
+    }
+
     //Получаем объект с объектами всех персонажей
-    const response = await fetch("https://hp-api.onrender.com/api/characters");
     const result = await response.json();
 
     //Получаем случайное число от 1 до максимального количества персонажей в API
@@ -17,14 +33,14 @@ async function getCharacter() {
 
     //Проверяем, чтобы по полученному числу вернулся существующий объект с персонажем
     if (result[number] === undefined)
-      throw new Error("Character not found");
+      throw new Error("Character with random index not found");
 
     //Получаем имя персонажа
     let name = result[number].name;
 
     //Проверяем, что получили персонажа
     if (name === "")
-      throw new Error("Character not found");
+      throw new Error("Character name is empty");
 
     //Получаем изображение персонажа
     let image = result[number].image;
@@ -75,7 +91,8 @@ async function getCharacter() {
   }
   catch (error) {
     console.log("Ошибка!", error.message);
-    //Здесь в идеале нужно будет дописать хорошо оформленный вывод ошибок на экран, или как ещё мы решим их обрабатывать
+
+    //Возвращаем объек ошибки с помощью класса, прописанного в domain/entity/Error.js и импортированного в начале
     return new ErrorObj(error.message);
   }
 }
