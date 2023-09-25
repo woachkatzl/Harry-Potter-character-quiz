@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 class List {
 
   //В аргументы передаём массивы
@@ -11,6 +13,7 @@ class List {
 
     for (let i = 0; i < this.categories.length; i++) {
       const listItem = document.createElement("li");
+      listItem.className = "result__list-item";
 
       listItem.textContent = this.categories[i] + ": " + this.results[i];
 

@@ -5,7 +5,7 @@
 .result {
     width: 70%;
     margin: 30px 0;
-    padding-bottom: 50px;
+    padding: 0 80px 50px;
     border-radius: 88px;
     background-color: c.$bg-text;
 }
@@ -19,6 +19,7 @@
 .result__info {
     display: flex;
     justify-content: space-around;
+    gap: 40px;
     font-family: f.$plain-text;
     font-size: 1.25rem;
 }

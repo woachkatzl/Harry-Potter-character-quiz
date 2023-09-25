@@ -11,6 +11,7 @@ import { ErrorMsg } from "../error-msg";
 
 //Изображения
 import errorImage from "../../../assets/img/error-img.gif";
+import resultImage from "../../../assets/img/result-img.png";
 
 class Result {
   #resultInfo;
@@ -52,9 +53,12 @@ class Result {
         this.#resultInfo.actor
       );
 
+      const resultImageElement = new Image(resultImage, "result-img");
+
       //Добавляем изображение, рамку с инфой и новую кнопку в главный див-обёртку
       this.wrapper.appendChild(characterImage.render());
       this.wrapper.appendChild(characterInfoBox.render());
+      this.wrapper.appendChild(resultImageElement.render());
       this.wrapper.appendChild(new Button(this.updateInfo, "TRY AGAIN").render());
     }
     //Если получаем ошибку
