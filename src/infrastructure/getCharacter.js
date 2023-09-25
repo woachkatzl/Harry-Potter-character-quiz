@@ -1,7 +1,7 @@
 // Здесь будет функция получения объекта персонажа из API
 //Классы
 import { Character } from "../domain/entity/Character";
-import { ErrorObj } from "../domain/entity/Error";
+import { CommonException } from "../domain/entity/CommonException";
 
 //Функционал
 import { fetchWithTimeout } from "./timeoutFetch";
@@ -97,7 +97,7 @@ async function getCharacter() {
     console.log("Ошибка!", error.message);
 
     //Возвращаем объек ошибки с помощью класса, прописанного в domain/entity/Error.js и импортированного в начале
-    return new ErrorObj(error.message);
+    return new CommonException(error.message);
   }
 }
 

@@ -11,6 +11,7 @@ class List {
   render() {
     const listElement = document.createElement("ul");
 
+    //Можно переписать с методом массива forEach()
     for (let i = 0; i < this.categories.length; i++) {
       const listItem = document.createElement("li");
       listItem.className = "result__list-item";

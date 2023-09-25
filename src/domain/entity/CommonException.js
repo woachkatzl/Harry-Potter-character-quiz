@@ -1,6 +1,6 @@
 // Здесь будет класс ошибки, содержащий в себе информацию об ошибке
 
-class ErrorObj {
+class CommonException {
   #message;
 
   constructor(message) {
@@ -13,4 +13,4 @@ class ErrorObj {
 
 }
 
-export { ErrorObj };
+export { CommonException };
