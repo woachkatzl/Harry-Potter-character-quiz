@@ -60,3 +60,33 @@
         opacity: 0;
     }
 }
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .start-button {
+        padding: 15px 50px;
+    }
+
+    .start-button::before {
+        background-color: rgba(243, 214, 74, 0.753); // Цвет фона при наведении
+        transform-origin: top left;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+    }
+
+    .start-button:hover {
+        transform: scale(1.05);
+
+    }
+
+    .start-button:hover::before {
+        transform: scaleX(1);
+
+    }
+
+    .start-button:hover:before {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 1;
+        animation: sparkle 2s infinite;
+    }
+}

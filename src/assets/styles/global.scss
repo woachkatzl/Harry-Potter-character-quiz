@@ -40,6 +40,27 @@ a:hover {
     margin-bottom: 70px;
 }
 
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .header__logo {
+        width: 50%;
+        /* ширина логотипа на мобильных устройствах */
+
+        margin-bottom: 20px;
+        /*  отступ снизу на мобильных устройствах */
+    }
+}
+
+/* Медиазапрос для планшетных устройств (ширина экрана от 768px до 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .header__logo {
+        width: 40%;
+        /*  ширина логотипа на планшетных устройствах */
+        margin-bottom: 40px;
+        /*  отступ снизу на планшетных устройствах */
+    }
+}
+
 //MAIN
 
 .main {
@@ -58,6 +79,8 @@ a:hover {
     padding: 30px 0;
     font-family: f.$plain-text;
     background-color: c.$bg-color-footer;
+    text-align: center;
+    /* Выравнивание текста по центру */
 }
 
 .footer__logo {
@@ -74,6 +97,30 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 30px;
+}
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .footer {
+        /*  стили для контейнера на мобильных устройствах */
+        padding: 20px 0;
+        /* Измените отступы по вашему усмотрению */
+    }
+
+    .footer__logo {
+        width: 30%;
+        /*  ширина логотипа на мобильных устройствах */
+    }
+
+    .footer__authors {
+        width: 50%;
+        /*  доступная ширина на мобильных устройствах */
+        flex-direction: column;
+        /* элементы внутри контейнера */
+        gap: 20px;
+        padding-left: 10%;
+    }
+
 }
 
 //РАМКА С ТЕКСТОМ
@@ -109,3 +156,104 @@ a:hover {
     bottom: -50px;
     right: -30px;
 }
+
+/* Медиазапрос для мобильных устройств (ширина экрана до 767px) */
+@media (max-width: 767px) {
+    .prompt {
+        width: 90%;
+        /*  ширина рамки на мобильных устройствах */
+        margin: 20px auto;
+        /* Центр по горизонтали и  отступы */
+        padding: 10px;
+        /*  внутренние отступы */
+        border-radius: 20px;
+        /*  радиус скругления углов */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .prompt__text {
+        font-size: 3rem;
+        /*  размер текста на мобильных устройствах */
+    }
+
+    .prompt__img {
+        width: 70px;
+        /*  размер изображения на мобильных устройствах */
+        height: 70px;
+        position: relative;
+    }
+
+    .prompt__img--left {
+        left: -30px;
+    }
+
+    .prompt__img--right {
+
+        align-self: flex-end;
+    }
+}
+
+//КОНТЕЙНЕР, ЗАПОЛНЯЕМЫЙ JS
+
+//Добавила в стили компонента presentation/components/result, Юля
+/* .populate {
+    @include vertical-flex;
+    width: 100%;
+    margin: 50px 0;
+} */
+
+
+//СТИЛИ ДЛЯ КОМПОНЕНТОВ
+
+//STARTING PAGE (разобрать на компоненты)
+
+//КНОПКА (добавила в стили компонента presentation/ui-kit/button, Юля)
+
+/* .start-button {
+    padding: 20px 100px;
+    @include btn-text;
+    border: none;
+    border-radius: 88px;
+    background-color: c.$btn-color;
+}
+
+.start-button:hover {
+    cursor: pointer;
+} */
+
+//НАЧАЛЬНАЯ КАРТИНКА (добавила в стили компонента presentation/ui-kit/image, Юля)
+
+/* .cartoon-init {
+    width: 265px;
+} */
+
+//БЛОК С РЕЗУЛЬТАТОМ (разобрать на компоненты)
+
+// ИЗОБРАЖЕНИЕ ПЕРСОНАЖА (добавила в стили компонента presentation/ui-kit/image, Юля)
+
+/* .character-img {
+    border-radius: 49px;
+} */
+
+//Рамка с результатами поиска. Добавила в стили компонента presentation/components/info-box
+/* .result {
+    width: 70%;
+    margin: 30px 0;
+    padding-bottom: 50px;
+    border-radius: 88px;
+    background-color: c.$bg-text;
+}
+
+.result__title {
+    text-align: center;
+    font-family: f.$highlight-text;
+    font-size: 3rem;
+}
+
+.result__info {
+    display: flex;
+    justify-content: space-around;
+    font-family: f.$plain-text;
+    font-size: 1.25rem;
+} */
