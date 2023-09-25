@@ -1,4 +1,4 @@
-//Функция fetch не завис навечно, в случае, если сервер станет unresponsive
+//Функция, чтобы fetch не завис навечно, в случае, если сервер станет unresponsive
 
 function fetchWithTimeout(url, timeout = 7000) {
   return Promise.race([
