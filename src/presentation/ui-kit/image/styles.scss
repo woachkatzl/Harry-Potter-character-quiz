@@ -4,14 +4,32 @@
 
 //Изображение персонажа
 .character-img {
-    border-radius: 49px;
     max-width: 40%;
+    border-radius: 49px;
+}
+
+//Изображение сбоку результата
+.result-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 25%;
+}
+
+//Изображение для ошибки
+.error-img {
+    max-width: 40%;
+    margin-bottom: 30px;
+    border-radius: 49px;
 }
 
 //Изображение на начальной странице загрузки
 .cartoon-init {
-    width: 646px;
-    height: 228px;
+    //Наложение поверх кнопки
+    position: relative;
+    bottom: -25px;
+    z-index: 10;
+
     transition: transform 1s ease-in-out;
     /* Плавное изменение положения */
 

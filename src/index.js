@@ -2,7 +2,8 @@
 import "./assets/styles/global.scss";
 
 //Изображения
-import initialImage from "./assets/img/main-pic.png";
+import initialImage1 from "./assets/img/main-pic1.png";
+import initialImage2 from "./assets/img/main-pic2.png";
 
 //Компоненты
 import { Button } from "./presentation/ui-kit/button";
@@ -19,9 +20,16 @@ const result = new Result();
 //Кладём его в контейнер
 container.appendChild(result.render());
 
-//Получаем его, чтобы наполнить начальным контентом
+//Получаем его в DOM (контейнер-результат), чтобы наполнить начальным контентом
 const resultContainer = document.querySelector("#result-container");
 
 //Заполняем начальную страницу
-resultContainer.appendChild(new Image(initialImage, "cartoon-init").render());
+//Случайно выбираем одно их двух начальных изображений
+const number = Math.ceil(Math.random() * 2);
+if (number === 1) {
+  resultContainer.appendChild(new Image(initialImage1, "cartoon-init").render());
+}
+else {
+  resultContainer.appendChild(new Image(initialImage2, "cartoon-init").render());
+}
 resultContainer.appendChild(new Button(result.updateInfo, "START").render());
