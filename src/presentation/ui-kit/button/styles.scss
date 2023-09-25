@@ -5,6 +5,7 @@
 .start-button {
     padding: 20px 100px;
     @include btn-text;
+    letter-spacing: 0.125rem;
     border: none;
     border-radius: 88px;
     background-color: c.$btn-color;
