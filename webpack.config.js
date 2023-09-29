@@ -27,6 +27,6 @@ module.exports = {
     ],
     output: {                // указание, куда собирать проект
         filename: 'main.js',   // файл, который генерируется и передается в браузер
-        path: path.resolve(__dirname, 'bundle'), // название директория
+        path: path.resolve(__dirname, './'), // название директория
     },
 };
