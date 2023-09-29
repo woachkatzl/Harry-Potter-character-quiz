@@ -31,3 +31,9 @@ npm ci
 8. You can start working on the project!
 ### Credits
 Many thanks to [Harry Potter API](https://github.com/KostaSav/hp-api) for providing the magical data that made this project possible.
+
+Our team:
+- [Yulia](https://github.com/woachkatzl)
+- [Vika](https://github.com/your-m1nd)
+- [Aigul](https://github.com/AigulReina)
+- [Alla](https://github.com/AllaMB)

@@ -1,7 +1,7 @@
 {
-  "name": "your-disney-character",
+  "name": "harry-potter-character-quiz",
   "version": "1.0.0",
-  "description": "Small web app to get information about a random Disney character",
+  "description": "Small web app to get information about a random Harry Potter character",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
